@@ -22,13 +22,13 @@ mgr_sync_automatic_authentication:
 
 {% endif %}
 
-scc_data_refresh:
-  cmd.script:
-    - name: salt://server_containerized/wait_for_mgr_sync.sh
-    - use_vt: True
-    - args: "{{ server_username }} {{ server_password }}"
-    - require:
-      - cmd: mgradm_install
+#scc_data_refresh:
+#  cmd.script:
+#    - name: salt://server_containerized/wait_for_mgr_sync.sh
+#    - use_vt: True
+#    - args: "{{ server_username }} {{ server_password }}"
+#    - require:
+#      - cmd: mgradm_install
 
 {% if grains.get('channels') %}
 add_channels:
